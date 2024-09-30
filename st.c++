@@ -1,14 +1,15 @@
 #include <iostream>
-
 using namespace std;
 
 class Student {
     
     public :
     
-    char name ;
+    char name[50] ;
     int rollno ;
+    string sub[3] = {"English", "Math","Computer"};
     int marks[3];
+    
 
 
 void takedata() {
@@ -16,28 +17,31 @@ void takedata() {
     cout << "Enter Your Name\n" ;
     cin >> name ;
     
-    cout << "Enter Your rollno\n" ;
+    cout << "\nEnter Your rollno\n" ;
     cin >> rollno ;
     
     
-    cout << "enter Marks\n";
-    for(int i=0; i<=3;i++)
-    {
+    cout << "\nEnter Marks\n";
+    for(int i=0; i<3;i++)
+    {   
+        cout << sub[i] << ": \n";
         cin >> marks[i];
     }
     
 };
+
     
 void showdata() {
     
     
-    cout << "name :\n" << name;
-    cout << "rollno\n :" << rollno;
-    cout << "marks \n:";
+    cout << "name :" << name;
+    cout << "\nrollno:" << rollno;
+    cout << "\nmarks :\n";
     
     for(int n=0;n<=3;n++)
-    {
-        cout << marks[n];
+    {   
+        cout << sub[n] << ":";
+        cout << marks[n] << "\n" ;
     }
     
 };
@@ -49,4 +53,3 @@ void showdata() {
        obj.takedata();
        obj.showdata();
    }
-
